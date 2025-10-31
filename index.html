@@ -291,18 +291,29 @@
         }
 
         .person-image {
-            width: 72px;
-            height: 72px;
+            /* doubled size (2x) */
+            width: 144px;
+            height: 144px;
             background: linear-gradient(45deg, #dfefff, #cfe6ff);
             border-radius: 50%;
-            margin: 0 auto 12px;
+            margin: 0 auto 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
             font-weight: 700;
-            font-size: 1.2em;
+            font-size: 2.4em;
+            overflow: hidden; /* ensure images stay clipped to the circle */
         }
++
++        /* ensure <img class="person-image"> fills and is cropped correctly */
++        img.person-image {
++            object-fit: cover;
++            display: block;
++            width: 144px;
++            height: 144px;
++            border-radius: 50%;
++        }
 
         .person-card h4 {
             color: var(--primary);
@@ -513,16 +524,52 @@
 
                 <section class="section" id="advisors">
                     <h2>Board of Advisors</h2>
+
+                    <h3>Pacific Northwest National Laboratory (PNNL)</h3>
                     <div class="people-grid">
                         <div class="person-card">
-                            <div class="person-image">AM</div>
+                            <img src="imgs/andres.jpg" alt="Dr. Andres Marquez" class="person-image" />
                             <h4>Dr. Andres Marquez</h4>
                             <div class="title">Chief Computer Scientist, PNNL</div>
                             <p>Principal investigator (PI) for the Department of Energy's Advanced Memory to Support AI for Science. Team Lead of the NextGen Architecture Design team within the Future Computing Technologies Group.</p>
                         </div>
                         
                         <div class="person-card">
-                            <div class="person-image">DW</div>
+                            <img src="imgs/roberto.jpg" alt="Dr. Roberto Gioiosa" class="person-image" />
+                            <h4>Dr. Roberto Gioiosa</h4>
+                            <div class="title">Chief Computer Scientist, PNNL</div>
+                            <p>Principal investigator (PI) and director of the co-design Center for Artificial Intelligence-focused Architectures and Algorithms (ARIAA). Team Lead of the Innovative Emerging Computing team within the Future Computing Technologies Group.</p>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="imgs/nathan.jpg" alt="Dr. Nathan R. Tallent" class="person-image" />
+                            <h4>Dr. Nathan R. Tallent</h4>
+                            <div class="title">Chief Computer Scientist, PNNL</div>
+                            <p>Recipient of the DOE Early Career award. Team Lead of the Continuum Computing team within the Future Computing Technologies Group.</p>
+                        </div>
+                    </div>
+
+                    <h3>University of California, Merced</h3>
+                    <div class="people-grid">
+                        <div class="person-card">
+                            <img src="imgs/dong.png" alt="Prof. Dong Li" class="person-image" />
+                            <h4>Prof. Dong Li</h4>
+                            <div class="title">Associate Professor, UC Merced</div>
+                            <p>Director of the Parallel Architecture, System, and Algorithm Lab (PASA); Director of the NSF IUCRC Center for Memory System Research (CEMSYS); and co-director of the High Performance Computing Systems and Architecture Group at UC Merced.</p>
+                        </div>
+
+                        <div class="person-card">
+                            <img src="imgs/hyeran.jpg" alt="Prof. Hyeran Jeon" class="person-image" />
+                            <h4>Prof. Hyeran Jeon</h4>
+                            <div class="title">Associate Professor, UC Merced</div>
+                            <p>Director of the Merced Computer Architecture Lab (MoCA). Research focuses on energy-efficient, reliable, and secure computer architecture and systems design.</p>
+                        </div>
+                    </div>
+
+                    <h3>University of California, Riverside</h3>
+                    <div class="people-grid">
+                        <div class="person-card">
+                            <img src="imgs/daniel.jpg" alt="Prof. Daniel Wong" class="person-image" />
                             <h4>Prof. Daniel Wong</h4>
                             <div class="title">Associate Professor, UC Riverside</div>
                             <p>Director of Systems Optimization and Computer Architecture Lab (SoCal). Research spans Computer Architecture, High Performance Computing, and Warehouse-scale Computing.</p>
@@ -536,8 +583,8 @@
                     <h3>Mentors</h3>
                     <div class="people-grid">
                         <div class="person-card">
-                            <div class="person-image">LG</div>
-                            <h4>Dr. Lenny Guo</h4>
+                            <img src="imgs/lenny.png" alt="Dr. Luanzheng Guo" class="person-image" />
+                            <h4>Dr. Luanzheng "Lenny" Guo</h4>
                             <div class="title">Staff Computer Scientist, PNNL</div>
                             <p>Research focused on scientific computing, data management, large-scale systems, and machine learning. Serving as PI and co-PI of multiple Laboratory Directed Research and Development (LDRD) projects.</p>
                         </div>
