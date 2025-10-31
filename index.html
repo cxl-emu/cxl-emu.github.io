@@ -253,19 +253,34 @@
             border-left: 4px solid var(--accent);
         }
 
-        .ocean-box h3 {
+        /* OCEAN Achievements and Roadmap boxes */
+        .achievements-box,
+        .roadmap-box {
+            /* match .ocean-box visual style */
+            background: linear-gradient(135deg, #e9f3ff 0%, #d7eaff 100%);
             color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.2em;
+            padding: 24px;
+            border-radius: 10px;
+            margin: 18px 0;
+            border-left: 4px solid var(--accent);
         }
 
-        .ocean-box a {
-            color: var(--secondary);
-            text-decoration: underline;
+        .achievements-box h4,
+        .roadmap-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
-        .ocean-box a:hover {
+        .achievements-box ul,
+        .roadmap-box ul {
+            margin-left: 18px;
             color: var(--primary);
+        }
+
+        .achievements-box li,
+        .roadmap-box li {
+            margin-bottom: 8px;
+            line-height: 1.45;
         }
 
         /* People Cards with Images */
@@ -498,7 +513,7 @@
                 <li><a href="#advisors">Board of Advisors</a></li>
                 <li><a href="#team">Team Members</a></li>
                 <li><a href="#research">Research Focus</a></li>
-                <li><a href="#roadmap">Next Steps</a></li>
+-                <li><a href="#roadmap">Next Steps</a></li>
                 <li><a href="#licensing">Open Source Licensing</a></li>
                 <li><a href="#contact">Get Involved</a></li>
             </ul>
@@ -519,6 +534,43 @@
                         <p>There is a project in progress that aligns with our CXL emulation efforts. The OCEAN project focuses on open-source CXL emulation for hyperscale architecture and networking applications.</p>
                         <p><strong>Repository:</strong> <a href="https://github.com/mujahidalrafi/OCEAN" target="_blank">https://github.com/mujahidalrafi/OCEAN</a></p>
                         <p>This project complements our workgroup's goals and provides a collaborative platform for advancing CXL emulation technologies.</p>
+                    </div>
+
+                    <!-- OCEAN Achievements -->
+                    <div class="achievements-box" aria-labelledby="ocean-achievements">
+                        <h4 id="ocean-achievements">OCEAN Achievements</h4>
+                        <ul>
+                            <li>Complete CXL 3.0 specification implementation</li>
+                            <li>Memory Device emulation: device can expose up to 32 Host-managed Device Memory (HDM) decoders</li>
+                            <li>Fabric Manager: distributed Fabric Manager implemented (host daemon + logic inside emulated devices)</li>
+                            <li>CXL switch with arbitrary topology: distributor of cachelines configurable with up to 256 virtual ports</li>
+                            <li>Kernel module for VMs providing a custom memory allocator for CXL memory regions in the guest</li>
+                            <li>Guest communicates with emulator Fabric Manager to request CXL memory and returns memory to the pool on free</li>
+                            <li>Maintains mapping between guest physical pages and global memory addresses</li>
+                            <li>Efficient scalability: multi-host support tested</li>
+                            <li>Consistency guarantees validated with litmus tests</li>
+                            <li>Performance fidelity tested</li>
+                            <li>Worked examples: MPI-based Gromacs tested on RDMA and MEMU-emulated CXL Pod</li>
+                            <li>Tested Tigon (Distributed DB for a CXL Pod) — Huang et al., OSDI ’25</li>
+                        </ul>
+                    </div>
+
+                    <!-- OCEAN Roadmap -->
+                    <div class="roadmap-box" aria-labelledby="ocean-roadmap">
+                        <h4 id="ocean-roadmap">OCEAN Roadmap</h4>
+                        <ul>
+                            <li>Test more workloads suitable for CXL Pod (Llama.cpp with MPI, distributed Louvain, OSU benchmarks)</li>
+                            <li>Discover additional workloads that realize CXL advantages</li>
+                            <li>Perform performance/functionality assessment for each MEMU component:
+                                <ul>
+                                    <li>Switch</li>
+                                    <li>Fabric Manager Daemon</li>
+                                    <li>Coherency protocols</li>
+                                </ul>
+                            </li>
+                            <li>Scale tests at hyperscale data centers and cloud services</li>
+                            <li>Prepare full report for arXiv/OSTI with comprehensive evaluation</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -643,31 +695,6 @@
                         <div class="research-card">
                             <h4>Hardware Availability</h4>
                             <p>Tackling the constrained availability of CXL hardware through emulation and simulation</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section" id="roadmap">
-                    <h2>Next Steps</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h4>Git Repository Setup</h4>
-                            <p>Creating a Git repository for code tracking and updates</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h4>Community Engagement</h4>
-                            <p>Creating a webpage for advertising and community outreach</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h4>Regular Meetings</h4>
-                            <p>Bi-weekly group meetings to sync on issues, questions, and updates. Weekly meetings between students and mentors to ensure progress</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h4>Team Growth</h4>
-                            <p>The group will grow as new advisors and students join the initiative</p>
                         </div>
                     </div>
                 </section>
