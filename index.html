@@ -1,10 +1,1069 @@
-<!DOCTYPE html>
-<html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Left Navigation */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #2d5016 0%, #4a7c2b 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .logo p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .nav-menu li {
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: background 0.3s;
+            border-left: 3px solid transparent;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: rgba(255,255,255,0.1);
+            border-left-color: #8bc34a;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 0;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4a7c2b 0%, #689f38 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2d5016;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 3px solid #8bc34a;
+            padding-bottom: 15px;
+        }
+        
+        .section h3 {
+            color: #4a7c2b;
+            font-size: 1.6em;
+            margin: 30px 0 20px 0;
+        }
+        
+        .section h4 {
+            color: #2d5016;
+            font-size: 1.3em;
+            margin: 20px 0 15px 0;
+        }
+        
+        /* Project Overview with Image */
+        .project-overview {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #e8f5e8, #c8e6c9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d5016;
+            font-weight: bold;
+            border: 2px dashed #8bc34a;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        /* OCEAN Project Box */
+        .ocean-box {
+            background: linear-gradient(135deg, #006064 0%, #00838f 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .ocean-box h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .ocean-box a {
+            color: #b2ebf2;
+            text-decoration: underline;
+        }
+        
+        .ocean-box a:hover {
+            color: white;
+        }
+        
+        /* People Cards with Images */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .person-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .person-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #c8e6c9, #a5d6a7);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d5016;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        .person-card h4 {
+            color: #2d5016;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        
+        .person-card .title {
+            color: #4a7c2b;
+            font-style: italic;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .person-card p {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Research Focus Cards */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .research-card {
+            background: linear-gradient(145deg, #f1f8e9, #e8f5e8);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #8bc34a;
+            position: relative;
+        }
+        
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #8bc34a;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .research-card h4 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #8bc34a;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 20px 20px 20px 70px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #8bc34a;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #8bc34a;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4a7c2b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2d5016;
+            transform: translateY(-2px);
+        }
+        
+        .notice-box {
+            background: #fff8e1;
+            border: 1px solid #ffcc02;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .notice-box h4 {
+            color: #f57f17;
+            margin-bottom: 15px;
+        }
+        
+        .licensing-content {
+            background: #f5f5f5;
+            border: 2px solid #8bc34a;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .licensing-content h4 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .licensing-content ul {
+            margin: 15px 0 15px 20px;
+        }
+        
+        .licensing-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                order: -1;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .project-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="en">
 <head>
-<title>CXL Emulation Workgroup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CXL Emulation Workgroup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Left Navigation */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #2d5016 0%, #4a7c2b 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .logo p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .nav-menu li {
+            margin: 0;
+        }
+        
+        .nav-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: background 0.3s;
+            border-left: 3px solid transparent;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: rgba(255,255,255,0.1);
+            border-left-color: #8bc34a;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 0;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4a7c2b 0%, #689f38 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #2d5016;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 3px solid #8bc34a;
+            padding-bottom: 15px;
+        }
+        
+        .section h3 {
+            color: #4a7c2b;
+            font-size: 1.6em;
+            margin: 30px 0 20px 0;
+        }
+        
+        .section h4 {
+            color: #2d5016;
+            font-size: 1.3em;
+            margin: 20px 0 15px 0;
+        }
+        
+        /* Project Overview with Image */
+        .project-overview {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #e8f5e8, #c8e6c9);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d5016;
+            font-weight: bold;
+            border: 2px dashed #8bc34a;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        /* OCEAN Project Box */
+        .ocean-box {
+            background: linear-gradient(135deg, #006064 0%, #00838f 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .ocean-box h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .ocean-box a {
+            color: #b2ebf2;
+            text-decoration: underline;
+        }
+        
+        .ocean-box a:hover {
+            color: white;
+        }
+        
+        /* People Cards with Images */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .person-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .person-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #c8e6c9, #a5d6a7);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d5016;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        .person-card h4 {
+            color: #2d5016;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        
+        .person-card .title {
+            color: #4a7c2b;
+            font-style: italic;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .person-card p {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Research Focus Cards */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .research-card {
+            background: linear-gradient(145deg, #f1f8e9, #e8f5e8);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #8bc34a;
+            position: relative;
+        }
+        
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #8bc34a;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .research-card h4 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #8bc34a;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 20px 20px 20px 70px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #8bc34a;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #8bc34a;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4a7c2b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2d5016;
+            transform: translateY(-2px);
+        }
+        
+        .notice-box {
+            background: #fff8e1;
+            border: 1px solid #ffcc02;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .notice-box h4 {
+            color: #f57f17;
+            margin-bottom: 15px;
+        }
+        
+        .licensing-content {
+            background: #f5f5f5;
+            border: 2px solid #8bc34a;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .licensing-content h4 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .licensing-content ul {
+            margin: 15px 0 15px 20px;
+        }
+        
+        .licensing-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                order: -1;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .project-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<h1>Welcome to the website!</h1>
-<p>This is a simple GitHub Pages site.</p>
+    <div class="container">
+        <!-- Left Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h1>CXL EMU</h1>
+                <p>Workgroup</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#overview">Project Overview</a></li>
+                <li><a href="#ocean">OCEAN Project</a></li>
+                <li><a href="#advisors">Board of Advisors</a></li>
+                <li><a href="#team">Team Members</a></li>
+                <li><a href="#research">Research Focus</a></li>
+                <li><a href="#roadmap">Next Steps</a></li>
+                <li><a href="#contact">Get Involved</a></li>
+                <li><a href="#licensing">Open Source Licensing</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header" id="home">
+                <h1>CXL Emulation Workgroup</h1>
+                <p>We are pleased to announce the launch of the CXL Emulation Workgroup, an initiative designed to tackle challenges within the CXL ecosystem, such as cache coherency, scalability, and the constrained availability of CXL hardware. We warmly invite the community to engage, share expertise, and collaborate to propel CXL-enabled hyperscale computing.</p>
+            </div>
+
+            <div class="content">
+                <section class="section" id="overview">
+                    <h2>Project Overview</h2>
+                    <div class="project-overview">
+                        <div>
+                            <div class="highlight-box">
+                                <h3>AMAIS Project</h3>
+                                <p>The CXL EMU Open-Source project is a component of AMAIS project sponsored by the Advanced Scientific Computing Research (ASCR) program in the Department of Energy (DOE) at Pacific Northwest National Laboratory, focusing on new memory systems applicable to scientific computational research.</p>
+                                <p><strong>PI:</strong> Dr. Andres Marquez</p>
+                            </div>
+                            <p>The AMAIS project, operated by Pacific Northwest National Laboratory (PNNL), focuses on developing cutting-edge memory systems tailored for scientific computational research. Aimed at meeting the demands of large-scale AI-boosted simulations, the project addresses the need for enhanced memory capacity without compromising performance in terms of bandwidth and latency.</p>
+                        </div>
+                        <div class="project-image">
+                            [Project Logo/Image]
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="ocean">
+                    <h2>OCEAN Project</h2>
+                    <div class="ocean-box">
+                        <h3>OCEAN – Open-source CXL Emulation at Hyperscale Architecture and Networking</h3>
+                        <p>There is a project in progress that aligns with our CXL emulation efforts. The OCEAN project focuses on open-source CXL emulation for hyperscale architecture and networking applications.</p>
+                        <p><strong>Repository:</strong> <a href="https://github.com/mujahidalrafi/OCEAN" target="_blank">https://github.com/mujahidalrafi/OCEAN</a></p>
+                        <p>This project complements our workgroup's goals and provides a collaborative platform for advancing CXL emulation technologies.</p>
+                    </div>
+                </section>
+
+                <section class="section" id="advisors">
+                    <h2>Board of Advisors</h2>
+                    <div class="people-grid">
+                        <div class="person-card">
+                            <div class="person-image">AM</div>
+                            <h4>Dr. Andres Marquez</h4>
+                            <div class="title">Chief Computer Scientist, PNNL</div>
+                            <p>Principal investigator (PI) for the Department of Energy's Advanced Memory to Support AI for Science. Team Lead of the NextGen Architecture Design team within the Future Computing Technologies Group.</p>
+                        </div>
+                        
+                        <div class="person-card">
+                            <div class="person-image">DW</div>
+                            <h4>Prof. Daniel Wong</h4>
+                            <div class="title">Associate Professor, UC Riverside</div>
+                            <p>Director of Systems Optimization and Computer Architecture Lab (SoCal). Research spans Computer Architecture, High Performance Computing, and Warehouse-scale Computing.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="team">
+                    <h2>Team Members</h2>
+                    
+                    <h3>Mentors</h3>
+                    <div class="people-grid">
+                        <div class="person-card">
+                            <div class="person-image">LG</div>
+                            <h4>Dr. Lenny Guo</h4>
+                            <div class="title">Staff Computer Scientist, PNNL</div>
+                            <p>Research focused on scientific computing, data management, large-scale systems, and machine learning. Serving as PI and co-PI of multiple Laboratory Directed Research and Development (LDRD) projects.</p>
+                        </div>
+                    </div>
+
+                    <h3>Students</h3>
+                    <div class="people-grid">
+                        <div class="person-card">
+                            <div class="person-image">C</div>
+                            <h4>Candice</h4>
+                            <div class="title">Ph.D. Candidate, IIT Chicago</div>
+                            <p>Supervised by Prof. Xian-He Sun. Research interests include parallel and distributed processing, memory and I/O systems.</p>
+                        </div>
+                        
+                        <div class="person-card">
+                            <div class="person-image">R</div>
+                            <h4>Rafi</h4>
+                            <div class="title">Ph.D. Candidate, UC Merced</div>
+                            <p>Supervised by Prof. Hyeran Jeon. Research interests include architecture design and security.</p>
+                        </div>
+                        
+                        <div class="person-card">
+                            <div class="person-image">J</div>
+                            <h4>Yiguang (Jack)</h4>
+                            <div class="title">Third-year Undergraduate, UCSB</div>
+                            <p>Advised by Prof. Dong Li</p>
+                        </div>
+                        
+                        <div class="person-card">
+                            <div class="person-image">V</div>
+                            <h4>Vickie</h4>
+                            <div class="title">Ph.D., UCSC</div>
+                            <p>Supervised by Prof. Andi Quinn</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="research">
+                    <h2>Research Focus</h2>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4>CXL Simulation & Emulation</h4>
+                            <p>Summary of existing CXL EMU/SIM designs including POND, CXL-DMSIM, EmuCXL, and QEMU's CXL capabilities</p>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4>Cache Coherency</h4>
+                            <p>Addressing cache coherency challenges within the CXL ecosystem for improved performance</p>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4>Scalability</h4>
+                            <p>Developing solutions for scalability issues in CXL-enabled hyperscale computing environments</p>
+                        </div>
+                        
+                        <div class="research-card">
+                            <h4>Hardware Availability</h4>
+                            <p>Tackling the constrained availability of CXL hardware through emulation and simulation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="roadmap">
+                    <h2>Next Steps</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Git Repository Setup</h4>
+                            <p>Creating a Git repository for code tracking and updates</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>Community Engagement</h4>
+                            <p>Creating a webpage for advertising and community outreach</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>Regular Meetings</h4>
+                            <p>Bi-weekly group meetings to sync on issues, questions, and updates. Weekly meetings between students and mentors to ensure progress</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>Team Growth</h4>
+                            <p>The group will grow as new advisors and students join the initiative</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="contact">
+                    <h2>Get Involved</h2>
+                    <div class="highlight-box">
+                        <h3>Join the CXL Emulation Community</h3>
+                        <p>We welcome researchers, developers, and enthusiasts to contribute to advancing CXL technology</p>
+                        <a href="#" class="btn">Join Our Repository</a>
+                        <a href="#" class="btn">Contact Us</a>
+                    </div>
+                </section>
+
+                <section class="section" id="licensing">
+                    <h2>Open Source Licensing</h2>
+                    
+                    <div class="licensing-content">
+                        <h4>NOTICE TO COLLABORATORS</h4>
+                        <p><strong>Collaborator Acknowledgement CXL-EMU Open-Source Project Participation</strong></p>
+                        
+                        <h4>Project Overview:</h4>
+                        <p>The AMAIS project, operated by Pacific Northwest National Laboratory (PNNL), sponsored by the Advanced Scientific Computing Research (ASCR) program within the Department of Energy (DOE), focuses on developing cutting-edge memory systems tailored for scientific computational research. Aimed at meeting the demands of large-scale AI-boosted simulations, the project addresses the need for enhanced memory capacity without compromising performance in terms of bandwidth and latency. PNNL is operated by Battelle Memorial Institute for the DOE under Contract DE-AC05-76RL01830.</p>
+                        
+                        <h4>Open Source Licensing of the Software:</h4>
+                        <ol>
+                            <li>The CXL-EMU software will be licensed under the BSD 2-Clause license, with inclusion of contributions solely at the discretion of Pacific Northwest National Laboratory/Battelle Memorial Institute.</li>
+                            <li>Contributors should affix their copyright notice and the BSD-2 "Simplified" license to each contribution: Copyright 202X Contributor Name. Licensed under the BSD 2 Clause License <a href="https://opensource.org/license/bsd-2-clause" target="_blank">https://opensource.org/license/bsd-2-clause</a></li>
+                        </ol>
+                        
+                        <h4>Contribution and Licensing:</h4>
+                        <ol>
+                            <li>External collaborators and contributors are welcome to participate and enrich the development and enhancement process of the CXL-EMU project.</li>
+                            <li>Pacific Northwest National Laboratory/Battelle Memorial Institute aim to keep the software open source for anyone to use, safeguarding the project's integrity and innovation potential.</li>
+                        </ol>
+                        
+                        <p><strong>By engaging in this collaborative effort and contributing to the software, contributors acknowledge the terms outlined above for the advancement and success of AMAIS and the CXL-EMU initiative.</strong></p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Update active link
+                document.querySelectorAll('.nav-menu a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
+							<script>
+                            	
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Update active link
+                document.querySelectorAll('.nav-menu a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    
+
+							</script>
+                        </body>
+                        </html>
+                    
