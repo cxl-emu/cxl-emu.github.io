@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CXL Emulation Workgroup</title>
-   <style>
+    <style>
         :root{
             --primary: #0b3d91;    /* deep RIKEN-like navy */
             --secondary: #1e66c4;  /* lighter blue */
@@ -320,15 +320,15 @@
             font-size: 2.4em;
             overflow: hidden; /* ensure images stay clipped to the circle */
         }
-+
-+        /* ensure <img class="person-image"> fills and is cropped correctly */
-+        img.person-image {
-+            object-fit: cover;
-+            display: block;
-+            width: 144px;
-+            height: 144px;
-+            border-radius: 50%;
-+        }
+
+        /* ensure <img class="person-image"> fills and is cropped correctly */
+        img.person-image {
+            object-fit: cover;
+            display: block;
+            width: 144px;
+            height: 144px;
+            border-radius: 50%;
+        }
 
         .person-card h4 {
             color: var(--primary);
@@ -474,6 +474,20 @@
             margin-bottom: 6px;
         }
 
+        /* subscription iframe wrapper - responsive and scrollable */
+        .subscription-box {
+            width: 100%;
+            max-width: 720px; /* adjustable */
+            margin: 0 auto;
+        }
+
+        .subscription-box iframe {
+            width: 100%;
+            height: var(--iframe-height, 305px);
+            border: 0;
+            display: block;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .sidebar {
@@ -482,9 +496,9 @@
                 position: relative;
                 order: -1;
             }
-+           /* keep good contrast on mobile logo area */
-+           .logo { border-bottom-color: rgba(0,0,0,0.06); }
-+           .nav-menu a { padding: 18px 20px; }
+           /* keep good contrast on mobile logo area */
+           .logo { border-bottom-color: rgba(0,0,0,0.06); }
+           .nav-menu a { padding: 18px 20px; }
             .main-content {
                 margin-left: 0;
             }
@@ -726,12 +740,13 @@
 
                 <section class="section" id="contact">
                     <h2>Get Involved</h2>
-                    <div class="highlight-box">
-                        <h3>Join the CXL Emulation Community</h3>
-                        <p>We welcome researchers, developers, and enthusiasts to contribute to advancing CXL technology</p>
-                        <a href="https://github.com/cxl-emu/OCEAN" class="btn" target="_blank" rel="noopener">Join Our Repository</a>
-                        <a href="mailto:lenny.guo@pnnl.gov?subject=CXL%20EMU%20Contact" class="btn">Contact Us</a>
-                    </div>
+
+                    <p class="contact-intro" style="margin-bottom:18px;">
+                        We welcome researchers, developers, and enthusiasts to contribute to advancing CXL technology
+                    </p>
+ 
+                     <!-- single responsive iframe (no wrapper) -->
+                     <iframe width="540" height="305" src="https://fe004ba6.sibforms.com/serve/MUIFAOcSCIpNsSc4uCEr4wj7Ec3rORKxCQXiYZK5tr9QzFkZ49ezbrVlqe5rjiZWRDFb8C9V2RKZn-we_kH4SM7PJC1GxyZu2DUzwidDNAMJW25h6kKCOPofDnioWvjzpeVAtTAlqYbT__SpDToTjUUZuRtGApkKvLDRZsQn0Ua6kHZczpodNSrnJMKdSWa-H1MG8AwaBl3QvXT-rA==" scrolling="no" frameborder="0" allowfullscreen="" style="width:100%; max-width:1500px; height:320px; border:0; display:block; margin:0 auto;"></iframe>
                 </section>
             </div>
             <!-- Footer kept inside main for consistent layout; placed after content -->
